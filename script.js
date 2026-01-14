@@ -18,7 +18,7 @@ let intervalId;
 
 function autoPlay(){
   if(!isAutoPlaying){
-    intervalId = setInterval(function() {
+    intervalId = setInterval(() =>  {
     const playMove = pickComputerMove();
     pickPlayerMove(playMove);
   },1000);
@@ -31,6 +31,37 @@ function autoPlay(){
   }
 
 }
+
+const rockButton = document.querySelector('.js-rock-button');
+const paperButton = document.querySelector('.js-paper-button');
+const scissorsButton = document.querySelector('.js-scissors-button');
+const resetButton = document.querySelector('.js-reset-button');
+const autoButton = document.querySelector('.js-auto-button');
+
+rockButton.addEventListener('click', () => {
+  pickPlayerMove('rock');
+});
+
+paperButton.addEventListener('click', () => {
+  pickPlayerMove('paper');
+});
+
+scissorsButton.addEventListener('click', () => {
+  pickPlayerMove('scissors');
+});
+
+resetButton.addEventListener('click', () => {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateRes();
+});
+
+
+autoButton.addEventListener('click', () => {
+  autoPlay();
+});
 
 
 function updateResult() {

@@ -10,15 +10,15 @@
   <body>
     <p class="title">Rock Paper Scissors</p>
 
-    <button class="move-button" onclick="pickPlayerMove('rock'); ">
+    <button class="move-button js-rock-button">
       <img class="move-image" src="./Img/rock-emoji.png" />
     </button>
 
-    <button class="move-button" onclick="pickPlayerMove('paper');">
+    <button class="move-button js-paper-button">
       <img class="move-image" src="./Img/paper-emoji.png" />
     </button>
 
-    <button class="move-button" onclick="pickPlayerMove('scissors');">
+    <button class="move-button js-scissors-button">
       <img class="move-image" src="./Img/scissors-emoji.png" />
     </button>
 
@@ -27,20 +27,13 @@
     <p class="res score-style"></p>
 
     <button
-      class="reset-button-style"
-      onclick="score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    updateRes();
-    "
-    >
+      class="reset-button-style js-reset-button">
       Reset Score
     </button>
 
-    <button class="auto-play-button" onclick="
-      autoPlay();
-    ">Auto Play</button>
+    <button class="auto-play-button js-auto-button">
+      Auto Play
+    </button>
 
     <script src="./script.js"></script>
   </body>
