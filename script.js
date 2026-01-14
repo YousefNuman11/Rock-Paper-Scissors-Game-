@@ -64,6 +64,20 @@ autoButton.addEventListener('click', () => {
 });
 
 
+
+document.body.addEventListener('keydown', (event) => {
+
+  if(event.key === 'r' || event.key === 'R'){
+    pickPlayerMove('rock');
+  }else  if(event.key === 'p' || event.key === 'P'){
+    pickPlayerMove('paper');
+  }else if (event.key === 's' || event.key === 'S'){
+    pickPlayerMove('scissors');}
+  });
+
+
+
+
 function updateResult() {
   document.querySelector(".js-result").innerHTML = `${result}`;
 }
